@@ -41,6 +41,7 @@ namespace FxConvertTask
             //add services
             serviceCollection.AddTransient<IConvertService, ConvertService>();
             serviceCollection.AddTransient<IRatesRepository, RatesRepository>();
+            serviceCollection.AddTransient<IFixerClient, FixerClient>();
             serviceCollection.AddSingleton<IOptions, Options>();
 
             //add app
