@@ -1,14 +1,10 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Net.Http;
-using System.Reflection;
 
 namespace FxConvertTask
 {
-    public interface IRatesRepository : IDisposable
+    public interface IRatesRepository
     {
         decimal GetRate(DateTime valueDate, string baseCurrency, string counterCurrency);
     }
@@ -74,25 +70,6 @@ namespace FxConvertTask
         private bool CurrencyExistsInCache(string currency, DateTime date)
         {
             return _rateCache[date].Rates.ContainsKey(currency);
-        }
-
-        private bool disposedValue = false;
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!disposedValue)
-            {
-                if (disposing)
-                {
-                    _fixerClient.Dispose();
-                }
-                disposedValue = true;
-            }
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
         }
     }
 

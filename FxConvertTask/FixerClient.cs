@@ -5,7 +5,7 @@ using System.Net.Http;
 
 namespace FxConvertTask
 {
-    public interface IFixerClient : IDisposable
+    public interface IFixerClient
     {
         FixerIo Get(DateTime valueDate);
     }
@@ -17,11 +17,6 @@ namespace FxConvertTask
         public FixerClient(IOptions options)
         {
             _options = options;
-        }
-
-        public void Dispose()
-        {
-            GC.SuppressFinalize(this);
         }
 
         public FixerIo Get(DateTime valueDate)

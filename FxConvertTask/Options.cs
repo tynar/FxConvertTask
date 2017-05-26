@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
+﻿using System.Globalization;
 
 namespace FxConvertTask
 {
@@ -16,18 +13,12 @@ namespace FxConvertTask
     {
         public string BaseCurrency
         {
-            get
-            {
-                return "EUR";
-            }
+            get { return "EUR"; }
         }
 
         public string DateFormat
         {
-            get
-            {
-                return "yyyy-MM-dd";
-            }
+            get {return "yyyy-MM-dd"; }
         }
 
         public CultureInfo DecimalCulture
